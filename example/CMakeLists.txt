@@ -2,7 +2,7 @@ add_custom_target(examples DEPENDS example)
 set(examples northwind usage rowset_iteration table_schema)
 
 include_directories(${CMAKE_SOURCE_DIR} ${ODBC_INCLUDE_DIR})
-link_directories(${CMAKE_BINARY_DIR}/lib)
+link_directories(${CMAKE_BINARY_DIR}/lib /usr/local/Cellar/unixodbc/2.3.4/lib/)
 
 foreach(example ${examples})
   add_executable(example_${example} ${example}.cpp example_unicode_utils.h)
